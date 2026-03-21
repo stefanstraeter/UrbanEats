@@ -1,71 +1,70 @@
-# DEVELOPER AKADEMIE – URBAN EATS
+# URBANEATS – MODERN FOOD DELIVERY APP
 
 ## Overview
 
-Urban Eats is a modern, interactive online food ordering application built with **HTML, CSS, and Vanilla JavaScript**. The project features a dynamic menu where users can browse different food categories, add dishes to the cart, switch between **delivery** and **pickup**, and view **subtotal, delivery fees, and total prices** in real-time. Designed with a **mobile-first approach**, the interface adapts seamlessly to all screen sizes.
+**UrbanEats** is a dynamic, interactive food ordering platform built with **Vanilla JavaScript, HTML5, and CSS3**. Inspired by modern delivery services, it allows users to browse a diverse menu, manage a real-time shopping cart, and toggle between delivery and pickup options with instant price recalculations.
 
-### The Challenge
+This project was developed as a key milestone during my **Front-End Development training at Developer Akademie**, focusing on dynamic DOM manipulation and persistent data handling.
 
-- Dynamically render categories and dishes using JavaScript
-- Implement a fully functional shopping cart with add/remove/update functionality
-- Enable a delivery/pickup toggle with real-time price updates
-- Persist cart data using Local Storage
-- Create a visually appealing, responsive layout with modern UI patterns
+### Preview
 
-### Links
+![UrbanEats Mockup](assets/img/urbanEats_mockup.jpg)
 
-- **Live Site:** [Live Demo](https://stefanstraeter.github.io/urban-eats/)
+### Live Demo
 
-### Mockup
-
-![Urban Eats Screenshot](assets/img/urbanEats_mockup.jpg)
+- **Link:** [View Live Project](https://stefanstraeter.github.io/urban-eats/)
 
 ---
 
-## My Process
+## Technical Architecture
 
-### Built With
+The application follows a clean separation of concerns by splitting the logic into specialized script files and modular CSS:
 
-- **HTML5** – semantic and accessible markup
-- **CSS3** – custom properties, Grid & Flexbox layout
-- **JavaScript (Vanilla)** – dynamic rendering, cart functionality, Local Storage persistence
-- **Mobile-First Workflow** – optimized for small screens first
-- **CSS Reset** – ensures consistent styling across browsers
+### Project Structure
 
-### Key Features & Techniques
+- **`scripts/db.js`**: The "Data Engine" containing the complex dish objects, categories, and prices.
+- **`scripts/template.js`**: Pure UI functions that return HTML strings for dynamic rendering.
+- **`script.js`**: The main controller handling the shopping cart logic, Local Storage synchronization, and event listeners.
+- **`styles/`**: Modular CSS architecture with a dedicated reset, component-based styling, and a mobile-first grid system.
 
-#### Dynamic Menu Rendering
+---
 
-- Food categories and dishes are loaded dynamically from a JavaScript array (`dishes`)
-- `renderAllDishes()` and `createDishesHtml()` generate menu cards for each dish
-- UI updates automatically when items are added or removed from the cart
+## Key Features & Implementation
 
-#### Cart Functionality
+### Dynamic Menu & State Management
 
-- Users can add dishes to the cart, update quantities, or remove items
-- Cart totals (subtotal, delivery fee, total) update in real-time
-- Delivery/pickup toggle controls whether delivery fees are applied
-- Cart contents persist in Local Storage
+Instead of static HTML, the entire menu is rendered dynamically from a central database. This ensures that any changes to prices or ingredients in `db.js` are instantly reflected across the entire UI.
 
-#### Responsive Design & Mobile-First Approach
+### Advanced Cart Logic
 
-- Flexible layouts using CSS Grid and Flexbox
-- Scalable text and spacing using `clamp()` and CSS variables
-- Mobile-first navigation and cart interface for small screens
+- **Real-time Calculation**: The app monitors subtotals, service fees, and delivery costs. The "Delivery vs. Pickup" toggle dynamically adds or removes fees.
+- **Persistence**: Integrated **Local Storage** ensures that the user's selection remains intact even after a page reload.
+- **Validation**: Logic to handle minimum order values and quantity updates (+/-) within the cart.
 
-#### Semantic HTML & Accessibility
+### Mobile-First & Responsive UX
 
-- Uses meaningful HTML elements: `<header>`, `<main>`, `<section>`, `<aside>`
-- Dish images include `alt` attributes
-- Buttons and forms are accessible with `aria-label` attributes
+The interface was designed with a mobile-first workflow, ensuring a seamless experience on smartphones before scaling up to desktop:
 
-#### Theming with CSS Variables
+- **Sticky Cart**: An optimized cart visibility strategy for small screens.
+- **Modern CSS**: Extensive use of Flexbox and CSS Grid for a robust, fluid layout.
+- **Visual Feedback**: Hover effects and active states to guide the user through the ordering process.
 
-- Centralized design tokens with `:root` custom properties
-- Easy to maintain and update colors, spacing, and typography
+### Clean Code & Templates
+
+By using a **Template-String Pattern**, the project keeps HTML and JavaScript logic separated, making the code more readable and easier to debug.
+
+---
+
+## Getting Started
+
+1. **Clone the repository:** `git clone https://github.com/stefanstraeter/urban-eats`
+2. **Launch:** Open `index.html` via a local server (e.g., VS Code Live Server).
+3. **Usage:** Browse categories, add items to your cart, and test the delivery/pickup toggle to see real-time price updates.
 
 ---
 
 ## Author
+
+**Stefan Straeter** _Full Stack Developer_
 
 - GitHub: [@stefanstraeter](https://github.com/stefanstraeter/)
